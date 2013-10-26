@@ -39,13 +39,14 @@ public class ProblemAS {
 			System.out.println("No Route Available from " + START + " to " + END);
 		}
 		else{
-		System.out.println("Total Route: " + NUMBER_OF_ROUTE);
+		System.out.println("Total Routes: " + NUMBER_OF_ROUTE);
 		System.out.println("Shortest Route Length: " + LENGTH_SHORTEST_ROUTE);
-		System.out.println("Shortest Route after Sorting of Routes of length "
+		System.out.print("Shortest Route after Sorting of Routes of length "
 				+ LENGTH_SHORTEST_ROUTE + ":");
-		while (!SHORTEST_ROUTE.isEmpty()) {
-			System.out.print((String)SHORTEST_ROUTE.remove());
+		for (String node : SHORTEST_ROUTE) {
+			System.out.print(" " + node );
 		}
+		System.out.println();
 		}
 		stdin.close();
 	}
@@ -80,7 +81,7 @@ public class ProblemAS {
 		if (visited.size() < LENGTH_SHORTEST_ROUTE) {
 			LENGTH_SHORTEST_ROUTE = visited.size();
 			SHORTEST_ROUTE = new LinkedList();
-			SHORTEST_ROUTE = visited;
+			SHORTEST_ROUTE = (LinkedList<String>) visited.clone();
 			/*
 			 * for(String node: SHORTEST_ROUTE){ System.out.println(node); }
 			 */
