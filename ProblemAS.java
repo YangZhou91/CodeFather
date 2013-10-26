@@ -43,8 +43,8 @@ public class ProblemAS {
 		System.out.println("Shortest Route Length: " + LENGTH_SHORTEST_ROUTE);
 		System.out.println("Shortest Route after Sorting of Routes of length "
 				+ LENGTH_SHORTEST_ROUTE + ":");
-		for (String node : SHORTEST_ROUTE) {
-			System.out.println(node);
+		while (!SHORTEST_ROUTE.isEmpty()) {
+			System.out.print((String)SHORTEST_ROUTE.remove());
 		}
 		}
 		stdin.close();
