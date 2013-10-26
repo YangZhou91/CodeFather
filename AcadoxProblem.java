@@ -8,7 +8,7 @@ import java.util.Stack;
  *
  * @author Gavin
  */
-public class AcadoxProblem {
+public class Solution {
 
     static Stack<Integer> stack = new Stack<Integer>();
 
@@ -46,6 +46,10 @@ public class AcadoxProblem {
                 else if (A.equals("X")) {
                     stack.push(stack.pop() ^ stack.pop());
                 }
+                
+                else if(A.equals("~")){
+                    stack.push(~stack.pop());
+                }
                 else {
                     stack.push(Integer.parseInt(A, 16));
                 }
@@ -72,7 +76,7 @@ public class AcadoxProblem {
                 }
             }
         }
-        catch (EmptyStackException e) {
+        catch (EmptyStackException | NumberFormatException e) {
             answer = "ERROR";
         }
 
